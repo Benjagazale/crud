@@ -13,4 +13,19 @@ container.insertBefore(div, main);
 setTimeout(() => document.querySelector('.alert').remove(), 3000);
 }
 
+//Clear all Fields
+
+function clearFields(){
+    document.querySelector('#firstName').value = ''
+    document.querySelector('#lastName').value = ''
+    document.querySelector('#rollNo').value = ''
+}
+
 //Delete data
+document.querySelector("#student-list").addEventListener("click", (e) =>{
+    target = e.target;
+    if(target.classList.contains('delete')){
+        target.parentElement.parentElement.remove();
+        showAlert('Student Data Deleted', 'danger')
+    }
+})
